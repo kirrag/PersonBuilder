@@ -1,0 +1,36 @@
+1) Вариант когда возраст человека не задается:
+public class Main {
+	public static void main(String[] args) {
+...
+		Person father = new PersonBuilder()
+				.setName("Сергей")
+				.setSurname("Иванов")
+				.build();
+...
+		if (father.getAge().equals(OptionalInt.empty())) {
+			System.out.println("Возраст отца не задан.");
+		} else {
+			System.out.println("Возраст отца: " 
+			+ father.getAge().getAsInt());
+		}
+
+    }
+}
+
+STDOUT:
+...
+Возраст отца не задан.
+...
+
+2) Вариант когда возраст человека задается:
+...
+		Person father = new PersonBuilder()
+				.setName("Сергей")
+				.setSurname("Иванов")
+				.setAge(45)
+				.build();
+...
+STDOUT:
+...
+Возраст отца: 45
+...
