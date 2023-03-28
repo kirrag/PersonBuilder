@@ -2,6 +2,7 @@ package ru.netology;
 
 import java.lang.IllegalStateException;
 import java.lang.IllegalArgumentException;
+import java.util.OptionalInt;
 
 public class PersonBuilder {
 	protected String name;	
@@ -30,7 +31,7 @@ public class PersonBuilder {
 	}
 
 	public Person build() {
-		if (name == null || surname == null || address == null) {
+		if (name == null || surname == null || OptionalInt.of(age) == null || address == null) {
 			throw new IllegalStateException();
 		}
 
