@@ -31,7 +31,7 @@ public class PersonBuilder {
 	}
 
 	public Person build() {
-		if (name == null || surname == null || OptionalInt.of(age) == null || address == null) {
+		if (name == null || surname == null) {
 			throw new IllegalStateException();
 		}
 
