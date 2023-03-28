@@ -1,11 +1,12 @@
 package ru.netology;
 
 import java.lang.IllegalStateException;
+import java.lang.IllegalArgumentException;
 
 public class PersonBuilder {
 	protected String name;	
 	protected String surname;
-	protected Integer age;
+	protected int age;
 	protected String address;
 
 	public PersonBuilder setName(String name) {
@@ -16,9 +17,9 @@ public class PersonBuilder {
 		this.surname = surname;
 		return this;
 	}
-	public PersonBuilder setAge(Integer age) {
+	public PersonBuilder setAge(int age) {
 		if (age < 0) {
-			throw new IllegalStateException();
+			throw new IllegalArgumentException();
 		}
 		this.age = age;
 		return this;
@@ -29,7 +30,7 @@ public class PersonBuilder {
 	}
 
 	public Person build() {
-		if (name.equals(null) || surname.equals(null) || age.equals(null) || address.equals(null)) {
+		if (name == null || surname == null || address == null) {
 			throw new IllegalStateException();
 		}
 
