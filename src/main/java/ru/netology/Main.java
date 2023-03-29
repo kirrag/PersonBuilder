@@ -24,7 +24,7 @@ public class Main {
 		Person father = new PersonBuilder()
 				.setName("Сергей")
 				.setSurname("Иванов")
-		//		.setAge(45)
+				.setAge(45)
 				.build();
 
 		System.out.println("Возраст мамы: " + mom.getAge().getAsInt());
